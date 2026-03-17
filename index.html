@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ágora Política — Educação Política para Todos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --verde: #1A3C2E;
+    --verde-medio: #2E6B50;
+    --verde-claro: #4CAF82;
+    --areia: #F5F0E8;
+    --areia-escura: #E8E0CC;
+    --texto: #1A1A1A;
+    --texto-suave: #5A5A5A;
+    --dourado: #C9A84C;
+    --branco: #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--areia);
+    color: var(--texto);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5vw;
+    background: rgba(245, 240, 232, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(26, 60, 46, 0.1);
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--verde);
+    letter-spacing: -0.03em;
+  }
+
+  .logo span {
+    color: var(--dourado);
+  }
+
+  nav a {
+    background: var(--verde);
+    color: var(--branco);
+    text-decoration: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+
+  nav a:hover { background: var(--verde-medio); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 5vw 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 55vw;
+    height: 110%;
+    background: var(--verde);
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 560px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--dourado);
+    color: var(--verde);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--verde);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--dourado);
+  }
+
+  .hero p {
+    font-size: 1.15rem;
+    color: var(--texto-suave);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 440px;
+  }
+
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 380px;
+  }
+
+  .hero-cta input {
+    padding: 0.9rem 1.2rem;
+    border: 1.5px solid var(--areia-escura);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    background: var(--branco);
+    color: var(--texto);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .hero-cta input:focus { border-color: var(--verde-claro); }
+
+  .hero-cta button {
+    padding: 1rem 2rem;
+    background: var(--verde);
+    color: var(--branco);
+    border: none;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .hero-cta button:hover { background: var(--verde-medio); }
+  .hero-cta button:active { transform: scale(0.98); }
+
+  .hero-count {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+  }
+
+  .hero-count strong { color: var(--verde); }
+
+  .hero-image-area {
+    position: absolute;
+    right: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 320px;
+  }
+
+  .float-card {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 14px;
+    padding: 1.2rem 1.4rem;
+    color: var(--branco);
+  }
+
+  .float-card .card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .float-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .float-card p {
+    font-size: 0.82rem;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+
+  /* PROBLEMAS */
+  .section-problem {
+    padding: 7rem 5vw;
+    background: var(--verde);
+    color: var(--branco);
+  }
+
+  .section-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+  }
+
+  .section-problem h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 700px;
+    margin-bottom: 3.5rem;
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .problem-item {
+    border-top: 2px solid var(--dourado);
+    padding-top: 1.2rem;
+  }
+
+  .problem-item h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+    color: var(--dourado);
+  }
+
+  .problem-item p {
+    font-size: 0.92rem;
+    opacity: 0.75;
+    line-height: 1.6;
+  }
+
+  /* SOLUÇÃO */
+  .section-solution {
+    padding: 7rem 5vw;
+    background: var(--areia);
+  }
+
+  .solution-header {
+    max-width: 640px;
+    margin-bottom: 4rem;
+  }
+
+  .solution-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--verde);
+    margin-bottom: 1rem;
+  }
+
+  .solution-header p {
+    font-size: 1.05rem;
+    color: var(--texto-suave);
+    line-height: 1.7;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    background: var(--branco);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid var(--areia-escura);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(26,60,46,0.1);
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--verde);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+  }
+
+  .feature-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--verde);
+    margin-bottom: 0.6rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+    line-height: 1.6;
+  }
+
+  /* PARA QUEM */
+  .section-audience {
+    padding: 7rem 5vw;
+    background: var(--areia-escura);
+  }
+
+  .audience-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+  }
+
+  .audience-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--verde);
+    margin-bottom: 1rem;
+  }
+
+  .audience-header p {
+    color: var(--texto-suave);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .audience-pill {
+    background: var(--branco);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid var(--areia-escura);
+  }
+
+  .audience-pill .pill-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+  }
+
+  .audience-pill span {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--verde);
+    line-height: 1.3;
+  }
+
+  /* MANIFESTO */
+  .section-manifesto {
+    padding: 7rem 5vw;
+    background: var(--dourado);
+    text-align: center;
+  }
+
+  .section-manifesto h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    color: var(--verde);
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.2;
+  }
+
+  .section-manifesto p {
+    font-size: 1.1rem;
+    color: var(--verde);
+    opacity: 0.8;
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* LISTA DE ESPERA FINAL */
+  .section-waitlist {
+    padding: 7rem 5vw;
+    background: var(--verde);
+    text-align: center;
+  }
+
+  .section-waitlist h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--branco);
+    margin-bottom: 1rem;
+  }
+
+  .section-waitlist p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .waitlist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .waitlist-form input {
+    padding: 0.9rem 1.2rem;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    color: var(--branco);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .waitlist-form input::placeholder { color: rgba(255,255,255,0.45); }
+  .waitlist-form input:focus { border-color: var(--dourado); }
+
+  .waitlist-form button {
+    padding: 1rem 2rem;
+    background: var(--dourado);
+    color: var(--verde);
+    border: none;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+  }
+
+  .waitlist-form button:hover { opacity: 0.9; }
+  .waitlist-form button:active { transform: scale(0.98); }
+
+  .success-message {
+    display: none;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: var(--branco);
+    text-align: center;
+  }
+
+  .success-message h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .success-message p { color: rgba(255,255,255,0.75); font-size: 0.95rem; }
+
+  /* FOOTER */
+  footer {
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 2rem 5vw;
+    font-size: 0.85rem;
+  }
+
+  footer strong { color: rgba(255,255,255,0.8); }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--verde);
+    color: var(--branco);
+    padding: 0.9rem 1.8rem;
+    border-radius: 100px;
+    font-size: 0.95rem;
+    border: 1px solid var(--dourado);
+    z-index: 999;
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* RESPONSIVO */
+  @media (max-width: 768px) {
+    .hero::before { width: 100%; clip-path: none; opacity: 0.06; }
+    .hero-image-area { display: none; }
+    .hero { padding-top: 7rem; }
+  }
+
+  /* ANIMAÇÃO DE ENTRADA */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Ágora <span>Política</span></div>
+  <a href="#lista-de-espera">Entrar na lista →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Em breve · Lista de espera aberta</div>
+    <h1>Política é <em>poder.</em><br>Aprenda a usá-la.</h1>
+    <p>A Ágora é a plataforma de educação política que traduz o sistema para quem quer participar — sem jargão, sem viés, com profundidade real.</p>
+    <div class="hero-cta">
+      <input type="email" id="hero-email" placeholder="Seu melhor e-mail" />
+      <button onclick="registrar('hero-email', 'hero-name')">Quero entrar na lista de espera →</button>
+    </div>
+    <p class="hero-count" id="hero-count"><strong>127 pessoas</strong> já garantiram sua vaga</p>
+  </div>
+
+  <div class="hero-image-area">
+    <div class="float-card">
+      <div class="card-icon">🏛️</div>
+      <h4>Como o Congresso funciona</h4>
+      <p>Entenda o processo legislativo de forma simples e prática</p>
+    </div>
+    <div class="float-card">
+      <div class="card-icon">🗳️</div>
+      <h4>Seu voto, sua voz</h4>
+      <p>Análise imparcial de candidatos e partidos</p>
+    </div>
+    <div class="float-card">
+      <div class="card-icon">📊</div>
+      <h4>Orçamento público</h4>
+      <p>Onde vai o dinheiro do seu imposto</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="section-problem">
+  <div class="fade-in">
+    <div class="section-label">O problema</div>
+    <h2>A política parece complicada porque poucos têm interesse em te explicar como ela realmente funciona.</h2>
+    <div class="problem-grid">
+      <div class="problem-item">
+        <h3>Jargão inacessível</h3>
+        <p>Termos técnicos criam uma barreira artificial que afasta o cidadão comum do debate público.</p>
+      </div>
+      <div class="problem-item">
+        <h3>Desinformação em excesso</h3>
+        <p>Fake news e análises parciais distorcem a realidade e dificultam decisões conscientes.</p>
+      </div>
+      <div class="problem-item">
+        <h3>Educação política falha</h3>
+        <p>Nas escolas, quase não se ensina como o sistema político funciona na prática.</p>
+      </div>
+      <div class="problem-item">
+        <h3>Passividade crescente</h3>
+        <p>Sem entendimento, as pessoas se afastam da política — e o espaço é preenchido por quem tem interesse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUÇÃO -->
+<section class="section-solution">
+  <div class="solution-header fade-in">
+    <div class="section-label" style="color: var(--verde-claro);">A solução</div>
+    <h2>Educação política clara, profunda e sem agenda.</h2>
+    <p>A Ágora oferece conteúdos que formam cidadãos críticos — não seguidores de nenhuma corrente.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card fade-in">
+      <div class="feature-icon">📚</div>
+      <h3>Cursos estruturados</h3>
+      <p>Trilhas de aprendizado que vão do básico ao avançado: sistema eleitoral, direito constitucional, orçamento público e muito mais.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">📰</div>
+      <h3>Análise de conjuntura</h3>
+      <p>Contextualizamos os fatos da semana com profundidade histórica e sem o barulho das redes sociais.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">🗺️</div>
+      <h3>Guias práticos</h3>
+      <p>Saiba como fiscalizar seu vereador, acompanhar o orçamento municipal e participar de audiências públicas.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">💬</div>
+      <h3>Comunidade de debates</h3>
+      <p>Espaço moderado para discussão respeitosa, com pessoas de diferentes perspectivas políticas.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">🎙️</div>
+      <h3>Entrevistas com especialistas</h3>
+      <p>Cientistas políticos, juristas e gestores públicos explicam como o sistema realmente funciona por dentro.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">📲</div>
+      <h3>Formato acessível</h3>
+      <p>Conteúdo em texto, vídeo e áudio — para aprender no seu ritmo, no celular ou no computador.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="section-audience">
+  <div class="audience-header fade-in">
+    <div class="section-label" style="color: var(--verde-medio);">Para quem é</div>
+    <h2>Para quem quer entender o Brasil de verdade.</h2>
+    <p>Não importa onde você está no espectro político. Se você quer ser um cidadão mais informado, a Ágora é para você.</p>
+  </div>
+  <div class="audience-grid fade-in">
+    <div class="audience-pill">
+      <span class="pill-icon">🎓</span>
+      <span>Estudantes que querem entender o mundo</span>
+    </div>
+    <div class="audience-pill">
+      <span class="pill-icon">💼</span>
+      <span>Profissionais que precisam acompanhar o cenário</span>
+    </div>
+    <div class="audience-pill">
+      <span class="pill-icon">🗳️</span>
+      <span>Eleitores que querem votar melhor</span>
+    </div>
+    <div class="audience-pill">
+      <span class="pill-icon">📣</span>
+      <span>Ativistas que querem argumentar com base</span>
+    </div>
+    <div class="audience-pill">
+      <span class="pill-icon">🏙️</span>
+      <span>Pessoas que querem participar da vida pública</span>
+    </div>
+    <div class="audience-pill">
+      <span class="pill-icon">🧓</span>
+      <span>Cidadãos que querem entender o noticiário</span>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="section-manifesto">
+  <div class="fade-in">
+    <h2>"Democracia sem educação é palco sem plateia consciente."</h2>
+    <p>A Ágora Política nasce da crença de que uma sociedade mais informada toma melhores decisões coletivas. Não somos de esquerda nem de direita. Somos do lado da inteligência cívica.</p>
+  </div>
+</section>
+
+<!-- LISTA DE ESPERA FINAL -->
+<section class="section-waitlist" id="lista-de-espera">
+  <h2 class="fade-in">Seja um dos primeiros.</h2>
+  <p class="fade-in">Garanta acesso antecipado e preço especial de fundador quando lançarmos.</p>
+  <div class="waitlist-form fade-in" id="form-container">
+    <input type="text" id="wl-nome" placeholder="Seu nome" />
+    <input type="email" id="wl-email" placeholder="Seu e-mail" />
+    <button onclick="registrar('wl-email', 'wl-nome')">Garantir minha vaga →</button>
+  </div>
+  <div class="success-message" id="success-msg">
+    <h3>🎉 Você está na lista!</h3>
+    <p>Confirmamos sua vaga. Você será um dos primeiros a saber quando lançarmos. Fique de olho no e-mail!</p>
+  </div>
+</section>
+
+<footer>
+  <strong>Ágora Política — Educação Política</strong><br>
+  <span>© 2025 · Formando cidadãos, fortalecendo a democracia.</span>
+</footer>
+
+<div class="toast" id="toast">✓ Você entrou na lista de espera!</div>
+
+<script>
+  // Lista de espera (armazenada localmente)
+  const STORAGE_KEY = 'agora_politica_waitlist';
+
+  function getWaitlist() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    } catch { return []; }
+  }
+
+  function saveWaitlist(list) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+  }
+
+  function updateCount() {
+    const list = getWaitlist();
+    const base = 127;
+    const count = base + list.length;
+    const el = document.getElementById('hero-count');
+    if (el) el.innerHTML = `<strong>${count} pessoas</strong> já garantiram sua vaga`;
+  }
+
+  function registrar(emailId, nomeId) {
+    const emailEl = document.getElementById(emailId);
+    const nomeEl = document.getElementById(nomeId);
+    const email = emailEl ? emailEl.value.trim() : '';
+    const nome = nomeEl ? nomeEl.value.trim() : '';
+
+    if (!email || !email.includes('@')) {
+      emailEl.style.borderColor = '#E24B4A';
+      emailEl.placeholder = 'Digite um e-mail válido';
+      setTimeout(() => { emailEl.style.borderColor = ''; }, 2000);
+      return;
+    }
+
+    const list = getWaitlist();
+    const jaExiste = list.some(item => item.email === email);
+
+    if (!jaExiste) {
+      list.push({ nome, email, data: new Date().toISOString() });
+      saveWaitlist(list);
+    }
+
+    if (emailId === 'wl-email') {
+      document.getElementById('form-container').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }
+
+    showToast();
+    updateCount();
+    if (emailEl) emailEl.value = '';
+    if (nomeEl) nomeEl.value = '';
+  }
+
+  function showToast() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+
+  // Animações de scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  updateCount();
+</script>
+</body>
+</html>
