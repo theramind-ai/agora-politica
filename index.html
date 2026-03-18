@@ -30,7 +30,6 @@
     overflow-x: hidden;
   }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -52,9 +51,7 @@
     letter-spacing: -0.03em;
   }
 
-  .logo span {
-    color: var(--dourado);
-  }
+  .logo span { color: var(--dourado); }
 
   nav a {
     background: var(--verde);
@@ -69,7 +66,6 @@
 
   nav a:hover { background: var(--verde-medio); }
 
-  /* HERO */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -82,10 +78,8 @@
   .hero::before {
     content: '';
     position: absolute;
-    top: -10%;
-    right: -5%;
-    width: 55vw;
-    height: 110%;
+    top: -10%; right: -5%;
+    width: 55vw; height: 110%;
     background: var(--verde);
     clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
     z-index: 0;
@@ -120,10 +114,7 @@
     margin-bottom: 1.5rem;
   }
 
-  .hero h1 em {
-    font-style: normal;
-    color: var(--dourado);
-  }
+  .hero h1 em { font-style: normal; color: var(--dourado); }
 
   .hero p {
     font-size: 1.15rem;
@@ -170,18 +161,12 @@
   .hero-cta button:hover { background: var(--verde-medio); }
   .hero-cta button:active { transform: scale(0.98); }
 
-  .hero-count {
-    margin-top: 1rem;
-    font-size: 0.85rem;
-    color: var(--texto-suave);
-  }
-
+  .hero-count { margin-top: 1rem; font-size: 0.85rem; color: var(--texto-suave); }
   .hero-count strong { color: var(--verde); }
 
   .hero-image-area {
     position: absolute;
-    right: 5vw;
-    top: 50%;
+    right: 5vw; top: 50%;
     transform: translateY(-50%);
     z-index: 1;
     display: flex;
@@ -199,30 +184,19 @@
     color: var(--branco);
   }
 
-  .float-card .card-icon {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
+  .float-card .card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
 
   .float-card h4 {
     font-family: 'Playfair Display', serif;
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 0.3rem;
+    color: var(--dourado);
   }
 
-  .float-card p {
-    font-size: 0.82rem;
-    opacity: 0.8;
-    line-height: 1.5;
-  }
+  .float-card p { font-size: 0.82rem; color: #F5F0E8; line-height: 1.5; }
 
-  /* PROBLEMAS */
-  .section-problem {
-    padding: 7rem 5vw;
-    background: var(--verde);
-    color: var(--branco);
-  }
+  .section-problem { padding: 7rem 5vw; background: var(--verde); color: var(--branco); }
 
   .section-label {
     font-size: 0.78rem;
@@ -247,34 +221,13 @@
     gap: 1.5rem;
   }
 
-  .problem-item {
-    border-top: 2px solid var(--dourado);
-    padding-top: 1.2rem;
-  }
+  .problem-item { border-top: 2px solid var(--dourado); padding-top: 1.2rem; }
+  .problem-item h3 { font-size: 1.1rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--dourado); }
+  .problem-item p { font-size: 0.92rem; opacity: 0.75; line-height: 1.6; }
 
-  .problem-item h3 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 0.6rem;
-    color: var(--dourado);
-  }
+  .section-solution { padding: 7rem 5vw; background: var(--areia); }
 
-  .problem-item p {
-    font-size: 0.92rem;
-    opacity: 0.75;
-    line-height: 1.6;
-  }
-
-  /* SOLUÇÃO */
-  .section-solution {
-    padding: 7rem 5vw;
-    background: var(--areia);
-  }
-
-  .solution-header {
-    max-width: 640px;
-    margin-bottom: 4rem;
-  }
+  .solution-header { max-width: 640px; margin-bottom: 4rem; }
 
   .solution-header h2 {
     font-family: 'Playfair Display', serif;
@@ -285,11 +238,7 @@
     margin-bottom: 1rem;
   }
 
-  .solution-header p {
-    font-size: 1.05rem;
-    color: var(--texto-suave);
-    line-height: 1.7;
-  }
+  .solution-header p { font-size: 1.05rem; color: var(--texto-suave); line-height: 1.7; }
 
   .features-grid {
     display: grid;
@@ -305,14 +254,10 @@
     transition: transform 0.2s, box-shadow 0.2s;
   }
 
-  .feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(26,60,46,0.1);
-  }
+  .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,60,46,0.1); }
 
   .feature-icon {
-    width: 48px;
-    height: 48px;
+    width: 48px; height: 48px;
     background: var(--verde);
     border-radius: 12px;
     display: flex;
@@ -330,23 +275,11 @@
     margin-bottom: 0.6rem;
   }
 
-  .feature-card p {
-    font-size: 0.9rem;
-    color: var(--texto-suave);
-    line-height: 1.6;
-  }
+  .feature-card p { font-size: 0.9rem; color: var(--texto-suave); line-height: 1.6; }
 
-  /* PARA QUEM */
-  .section-audience {
-    padding: 7rem 5vw;
-    background: var(--areia-escura);
-  }
+  .section-audience { padding: 7rem 5vw; background: var(--areia-escura); }
 
-  .audience-header {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 4rem;
-  }
+  .audience-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
 
   .audience-header h2 {
     font-family: 'Playfair Display', serif;
@@ -356,11 +289,7 @@
     margin-bottom: 1rem;
   }
 
-  .audience-header p {
-    color: var(--texto-suave);
-    font-size: 1.05rem;
-    line-height: 1.7;
-  }
+  .audience-header p { color: var(--texto-suave); font-size: 1.05rem; line-height: 1.7; }
 
   .audience-grid {
     display: grid;
@@ -380,24 +309,10 @@
     border: 1px solid var(--areia-escura);
   }
 
-  .audience-pill .pill-icon {
-    font-size: 1.8rem;
-    flex-shrink: 0;
-  }
+  .audience-pill .pill-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .audience-pill span { font-weight: 500; font-size: 0.95rem; color: var(--verde); line-height: 1.3; }
 
-  .audience-pill span {
-    font-weight: 500;
-    font-size: 0.95rem;
-    color: var(--verde);
-    line-height: 1.3;
-  }
-
-  /* MANIFESTO */
-  .section-manifesto {
-    padding: 7rem 5vw;
-    background: var(--dourado);
-    text-align: center;
-  }
+  .section-manifesto { padding: 7rem 5vw; background: var(--dourado); text-align: center; }
 
   .section-manifesto h2 {
     font-family: 'Playfair Display', serif;
@@ -409,21 +324,9 @@
     line-height: 1.2;
   }
 
-  .section-manifesto p {
-    font-size: 1.1rem;
-    color: var(--verde);
-    opacity: 0.8;
-    max-width: 560px;
-    margin: 0 auto;
-    line-height: 1.7;
-  }
+  .section-manifesto p { font-size: 1.1rem; color: var(--verde); opacity: 0.8; max-width: 560px; margin: 0 auto; line-height: 1.7; }
 
-  /* LISTA DE ESPERA FINAL */
-  .section-waitlist {
-    padding: 7rem 5vw;
-    background: var(--verde);
-    text-align: center;
-  }
+  .section-waitlist { padding: 7rem 5vw; background: var(--verde); text-align: center; }
 
   .section-waitlist h2 {
     font-family: 'Playfair Display', serif;
@@ -433,19 +336,9 @@
     margin-bottom: 1rem;
   }
 
-  .section-waitlist p {
-    color: rgba(255,255,255,0.7);
-    font-size: 1.05rem;
-    margin-bottom: 2.5rem;
-  }
+  .section-waitlist p { color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 2.5rem; }
 
-  .waitlist-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    max-width: 400px;
-    margin: 0 auto;
-  }
+  .waitlist-form { display: flex; flex-direction: column; gap: 0.8rem; max-width: 400px; margin: 0 auto; }
 
   .waitlist-form input {
     padding: 0.9rem 1.2rem;
@@ -488,29 +381,15 @@
     text-align: center;
   }
 
-  .success-message h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-  }
-
+  .success-message h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 0.5rem; }
   .success-message p { color: rgba(255,255,255,0.75); font-size: 0.95rem; }
 
-  /* FOOTER */
-  footer {
-    color: rgba(255,255,255,0.5);
-    text-align: center;
-    padding: 2rem 5vw;
-    font-size: 0.85rem;
-  }
-
+  footer { background: #0F2219; color: rgba(255,255,255,0.5); text-align: center; padding: 2rem 5vw; font-size: 0.85rem; }
   footer strong { color: rgba(255,255,255,0.8); }
 
-  /* TOAST */
   .toast {
     position: fixed;
-    bottom: 2rem;
-    left: 50%;
+    bottom: 2rem; left: 50%;
     transform: translateX(-50%) translateY(100px);
     background: var(--verde);
     color: var(--branco);
@@ -521,25 +400,17 @@
     z-index: 999;
     transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
   }
+
   .toast.show { transform: translateX(-50%) translateY(0); }
 
-  /* RESPONSIVO */
   @media (max-width: 768px) {
     .hero::before { width: 100%; clip-path: none; opacity: 0.06; }
     .hero-image-area { display: none; }
     .hero { padding-top: 7rem; }
   }
 
-  /* ANIMAÇÃO DE ENTRADA */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
@@ -549,7 +420,6 @@
   <a href="#lista-de-espera">Entrar na lista →</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-badge">Em breve · Lista de espera aberta</div>
@@ -561,7 +431,6 @@
     </div>
     <p class="hero-count" id="hero-count"><strong>127 pessoas</strong> já garantiram sua vaga</p>
   </div>
-
   <div class="hero-image-area">
     <div class="float-card">
       <div class="card-icon">🏛️</div>
@@ -581,7 +450,6 @@
   </div>
 </section>
 
-<!-- PROBLEMA -->
 <section class="section-problem">
   <div class="fade-in">
     <div class="section-label">O problema</div>
@@ -607,7 +475,6 @@
   </div>
 </section>
 
-<!-- SOLUÇÃO -->
 <section class="section-solution">
   <div class="solution-header fade-in">
     <div class="section-label" style="color: var(--verde-claro);">A solução</div>
@@ -648,7 +515,6 @@
   </div>
 </section>
 
-<!-- PARA QUEM -->
 <section class="section-audience">
   <div class="audience-header fade-in">
     <div class="section-label" style="color: var(--verde-medio);">Para quem é</div>
@@ -656,34 +522,15 @@
     <p>Não importa onde você está no espectro político. Se você quer ser um cidadão mais informado, a Ágora é para você.</p>
   </div>
   <div class="audience-grid fade-in">
-    <div class="audience-pill">
-      <span class="pill-icon">🎓</span>
-      <span>Estudantes que querem entender o mundo</span>
-    </div>
-    <div class="audience-pill">
-      <span class="pill-icon">💼</span>
-      <span>Profissionais que precisam acompanhar o cenário</span>
-    </div>
-    <div class="audience-pill">
-      <span class="pill-icon">🗳️</span>
-      <span>Eleitores que querem votar melhor</span>
-    </div>
-    <div class="audience-pill">
-      <span class="pill-icon">📣</span>
-      <span>Ativistas que querem argumentar com base</span>
-    </div>
-    <div class="audience-pill">
-      <span class="pill-icon">🏙️</span>
-      <span>Pessoas que querem participar da vida pública</span>
-    </div>
-    <div class="audience-pill">
-      <span class="pill-icon">🧓</span>
-      <span>Cidadãos que querem entender o noticiário</span>
-    </div>
+    <div class="audience-pill"><span class="pill-icon">🎓</span><span>Estudantes que querem entender o mundo</span></div>
+    <div class="audience-pill"><span class="pill-icon">💼</span><span>Profissionais que precisam acompanhar o cenário</span></div>
+    <div class="audience-pill"><span class="pill-icon">🗳️</span><span>Eleitores que querem votar melhor</span></div>
+    <div class="audience-pill"><span class="pill-icon">📣</span><span>Ativistas que querem argumentar com base</span></div>
+    <div class="audience-pill"><span class="pill-icon">🏙️</span><span>Pessoas que querem participar da vida pública</span></div>
+    <div class="audience-pill"><span class="pill-icon">🧓</span><span>Cidadãos que querem entender o noticiário</span></div>
   </div>
 </section>
 
-<!-- MANIFESTO -->
 <section class="section-manifesto">
   <div class="fade-in">
     <h2>"Democracia sem educação é palco sem plateia consciente."</h2>
@@ -691,7 +538,6 @@
   </div>
 </section>
 
-<!-- LISTA DE ESPERA FINAL -->
 <section class="section-waitlist" id="lista-de-espera">
   <h2 class="fade-in">Seja um dos primeiros.</h2>
   <p class="fade-in">Garanta acesso antecipado e preço especial de fundador quando lançarmos.</p>
@@ -714,25 +560,12 @@
 <div class="toast" id="toast">✓ Você entrou na lista de espera!</div>
 
 <script>
-  // Lista de espera (armazenada localmente)
-  const STORAGE_KEY = 'agora_politica_waitlist';
-
-  function getWaitlist() {
-    try {
-      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-    } catch { return []; }
-  }
-
-  function saveWaitlist(list) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-  }
+  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyGtfxrCrmvWd-etAzCCCIrr-38_oQKZy-xtbi58PSP3g3NRemQPxe_2cngbrh63p-c3A/exec';
+  let contador = 127;
 
   function updateCount() {
-    const list = getWaitlist();
-    const base = 127;
-    const count = base + list.length;
     const el = document.getElementById('hero-count');
-    if (el) el.innerHTML = `<strong>${count} pessoas</strong> já garantiram sua vaga`;
+    if (el) el.innerHTML = `<strong>${contador} pessoas</strong> já garantiram sua vaga`;
   }
 
   function registrar(emailId, nomeId) {
@@ -748,23 +581,31 @@
       return;
     }
 
-    const list = getWaitlist();
-    const jaExiste = list.some(item => item.email === email);
+    const btn = document.querySelector(`button[onclick="registrar('${emailId}', '${nomeId}')"]`);
+    if (btn) { btn.textContent = 'Enviando...'; btn.disabled = true; }
 
-    if (!jaExiste) {
-      list.push({ nome, email, data: new Date().toISOString() });
-      saveWaitlist(list);
-    }
-
-    if (emailId === 'wl-email') {
-      document.getElementById('form-container').style.display = 'none';
-      document.getElementById('success-msg').style.display = 'block';
-    }
-
-    showToast();
-    updateCount();
-    if (emailEl) emailEl.value = '';
-    if (nomeEl) nomeEl.value = '';
+    fetch(SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nome, email })
+    })
+    .then(() => {
+      contador++;
+      updateCount();
+      if (emailId === 'wl-email') {
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+      }
+      showToast();
+      if (emailEl) emailEl.value = '';
+      if (nomeEl) nomeEl.value = '';
+      if (btn) { btn.textContent = 'Garantir minha vaga →'; btn.disabled = false; }
+    })
+    .catch(() => {
+      if (btn) { btn.textContent = 'Garantir minha vaga →'; btn.disabled = false; }
+      alert('Erro ao enviar. Verifique sua conexão e tente novamente.');
+    });
   }
 
   function showToast() {
@@ -773,18 +614,13 @@
     setTimeout(() => toast.classList.remove('show'), 3500);
   }
 
-  // Animações de scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
     });
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
   updateCount();
 </script>
 </body>
